@@ -38,13 +38,13 @@
     const fb = new URLSearchParams(location.search).get('fb') || '';
     const map = {
       // Vietnamese
-      'rat-hay':      { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',                   body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.' },
-      'tam-on':       { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!',              body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!' },
-      'chua-trung':   { mark: '🙏', title: 'Cảm ơn anh/chị đã thẳng thắn chia sẻ!', body: 'Góp ý của anh/chị rất quý giá với em. Em sẽ điều chỉnh nội dung để phù hợp hơn trong các bản tin sắp tới!' },
+      'rat-hay':      { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',                    body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.' },
+      'tam-on':       { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!',               body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!' },
+      'chua-trung':   { mark: '🙏', title: 'Cảm ơn anh/chị đã thẳng thắn chia sẻ!',  body: 'Góp ý của anh/chị rất quý giá với em. Em sẽ điều chỉnh nội dung để phù hợp hơn trong các bản tin sắp tới!' },
       // English
-      'great':        { mark: '🥰', title: 'Thanks for the love!',               body: 'Your feedback helps us pick more relevant content for the next edition.' },
-      'okay':         { mark: '🙂', title: 'Thanks for your feedback!',           body: 'Noted! We can always do better — feel free to share specific thoughts via email below.' },
-      'not-relevant': { mark: '🙏', title: 'Thanks for being honest!',            body: 'Your candid feedback is really valuable. We’ll adjust the content to make it more useful in upcoming editions.' },
+      'great':        { mark: '🥰', title: 'Love it — thanks for sharing!',     body: 'Your feedback helps us pick more relevant content for the next edition.' },
+      'okay':         { mark: '🙂', title: 'It is fine — good to know!',         body: 'Noted! We can always do better — feel free to share specific thoughts via email below.' },
+      'not-relevant': { mark: '😢', title: 'Not quite — thanks for being honest!', body: 'We hear you. We’ll adjust the content to make it more useful in upcoming editions.' },
     };
     const d = map[fb] || map['rat-hay'];
     document.getElementById('mark').textContent  = d.mark;
