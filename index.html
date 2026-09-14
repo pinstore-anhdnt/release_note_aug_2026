@@ -28,11 +28,23 @@
 </head>
 <body>
   <div class="card">
-    <div class="mark">🥰</div>
-    <h1>Đã ghi nhận, cảm ơn anh/chị!</h1>
-    <p>Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.</p>
+    <div class="mark" id="mark"></div>
+    <h1 id="title"></h1>
+    <p id="body"></p>
     <a class="btn" href="https://nexus.vnggames.com/aawp/nexus-docs/space/553844786?page_id=1929543792">Về trang Release Notes</a>
     <div class="foot">Muốn nói rõ hơn? Gửi em ở <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a></div>
   </div>
+  <script>
+    const fb = new URLSearchParams(location.search).get('fb') || '';
+    const map = {
+      'rat-hay':     { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',           body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.' },
+      'tam-on':      { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!',        body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!' },
+      'chua-trung':  { mark: '🙏', title: 'Cảm ơn anh/chị đã thảng thắn!',      body: 'Góp ý của anh/chị rất quý giá với em. Em sẽ điều chỉnh nội dung để phù hợp hơn trong các bản tin sắp tới!' },
+    };
+    const d = map[fb] || map['rat-hay'];
+    document.getElementById('mark').textContent  = d.mark;
+    document.getElementById('title').textContent = d.title;
+    document.getElementById('body').textContent  = d.body;
+  </script>
 </body>
 </html>
