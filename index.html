@@ -36,15 +36,18 @@
   </div>
   <script>
     const fb = new URLSearchParams(location.search).get('fb') || '';
-    const map = {
-      'rat-hay':     { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',           body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.' },
-      'tam-on':      { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!',        body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!' },
-      'chua-trung':  { mark: '🙏', title: 'Cảm ơn anh/chị đã thảng thắn!',      body: 'Góp ý của anh/chị rất quý giá với em. Em sẽ điều chỉnh nội dung để phù hợp hơn trong các bản tin sắp tới!' },
-    };
-    const d = map[fb] || map['rat-hay'];
-    document.getElementById('mark').textContent  = d.mark;
-    document.getElementById('title').textContent = d.title;
-    document.getElementById('body').textContent  = d.body;
+    if (fb === 'chua-trung') {
+      location.replace('https://forms.cloud.microsoft/pages/responsepage.aspx?id=bioRfOIQCU6vxC43vGDYIaCl_RhqhyhHhI03ewntIqtUM09GMlVKUFdFVEU3TlkwRTFSUTZYTjRUTC4u&route=shorturl');
+    } else {
+      const map = {
+        'rat-hay': { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',    body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.' },
+        'tam-on':  { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!', body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!' },
+      };
+      const d = map[fb] || map['rat-hay'];
+      document.getElementById('mark').textContent  = d.mark;
+      document.getElementById('title').textContent = d.title;
+      document.getElementById('body').textContent  = d.body;
+    }
   </script>
 </body>
 </html>
