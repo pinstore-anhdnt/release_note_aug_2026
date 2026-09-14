@@ -32,24 +32,25 @@
     <h1 id="title"></h1>
     <p id="body"></p>
     <a class="btn" href="https://nexus.vnggames.com/aawp/nexus-docs/space/553844786?page_id=1930559603">View August Release Notes</a>
-    <div class="foot">Muốn nói rõ hơn? Gửi em ở <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a></div>
+    <div class="foot" id="foot"></div>
   </div>
   <script>
     const fb = new URLSearchParams(location.search).get('fb') || '';
     const map = {
       // Vietnamese
-      'rat-hay':      { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',                    body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.' },
-      'tam-on':       { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!',               body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!' },
-      'chua-trung':   { mark: '🙏', title: 'Cảm ơn anh/chị đã thẳng thắn chia sẻ!',  body: 'Góp ý của anh/chị rất quý giá với em. Em sẽ điều chỉnh nội dung để phù hợp hơn trong các bản tin sắp tới!' },
+      'rat-hay':      { mark: '🥰', title: 'Đã ghi nhận, cảm ơn anh/chị!',                    body: 'Phản hồi của anh/chị giúp em chọn nội dung sát hơn cho bản tin số sau.', foot: 'Muốn nói rõ hơn? Gửi em ở <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a>' },
+      'tam-on':       { mark: '🙂', title: 'Cảm ơn anh/chị đã phản hồi!',               body: 'Em ghi nhận Ạ. Nội dung vẫn có thể tốt hơn — anh/chị có thể gửi góp ý cụ thể qua email bên dưửi nhé!', foot: 'Muốn nói rõ hơn? Gửi em ở <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a>' },
+      'chua-trung':   { mark: '🙏', title: 'Cảm ơn anh/chị đã thẳng thắn chia sẻ!',  body: 'Góp ý của anh/chị rất quý giá với em. Em sẽ điều chỉnh nội dung để phù hợp hơn trong các bản tin sắp tới!', foot: 'Muốn nói rõ hơn? Gửi em ở <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a>' },
       // English
-      'great':        { mark: '🥰', title: 'Love it — thanks for sharing!',     body: 'Your feedback helps us pick more relevant content for the next edition.' },
-      'okay':         { mark: '🙂', title: 'It is fine — good to know!',         body: 'Noted! We can always do better — feel free to share specific thoughts via email below.' },
-      'not-relevant': { mark: '😢', title: 'Not quite — thanks for being honest!', body: 'We hear you. We’ll adjust the content to make it more useful in upcoming editions.' },
+      'great':        { mark: '🥰', title: 'Love it — thanks for sharing!',         body: 'Your feedback helps us pick more relevant content for the next edition.',                                                                                                foot: 'Want to say more? Drop us a note at <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a>' },
+      'okay':         { mark: '🙂', title: 'It is fine — good to know!',             body: 'Noted! We can always do better — feel free to share specific thoughts via email below.',                                                                            foot: 'Want to say more? Drop us a note at <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a>' },
+      'not-relevant': { mark: '😢', title: 'Not quite — thanks for being honest!',   body: 'We hear you. We’ll adjust the content to make it more useful in upcoming editions.',                                                                               foot: 'Want to say more? Drop us a note at <a href="mailto:gpp.communication@vng.com.vn">gpp.communication@vng.com.vn</a>' },
     };
     const d = map[fb] || map['rat-hay'];
     document.getElementById('mark').textContent  = d.mark;
     document.getElementById('title').textContent = d.title;
     document.getElementById('body').textContent  = d.body;
+    document.getElementById('foot').innerHTML    = d.foot;
   </script>
 </body>
 </html>
